@@ -37,7 +37,7 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI,
+      connectionString: process.env.DATABASE_URI?.replace(/([?&])sslmode=require(?=&|$)/, '$1sslmode=verify-full'),
       max: 10,
       idleTimeoutMillis: 10_000,
     },
