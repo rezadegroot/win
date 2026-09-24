@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { KopAccent, Tekst, heeftCta } from '@/blocks/ui'
+import { CalendlyInlineWidget } from '@/blocks/components/CalendlyInlineWidget'
 import type { CalloutBandBlok, CtaBandBlok, DonkerPaneelBlok, OntwikkellijnBandBlok, ProgressieCirkelsBlok, QuoteBandBlok } from '@/payload-types'
 
 const FASE_TITELS = ['Fundamenteren', 'Stabiliseren', 'Versterken', 'Leiderschap']
@@ -299,9 +300,10 @@ export function ProgressieCirkels(props: ProgressieCirkelsBlok) {
 }
 
 export function CalloutBand(props: CalloutBandBlok) {
+  const isRezaCalendly = props.externeUrl?.split('?')[0] === 'https://calendly.com/rezadegroot/25min'
   return (
-    <section className="px-6 py-8 md:py-14">
-      <div className="relative mx-auto max-w-5xl overflow-hidden bg-win-navy p-8 text-win-cream md:p-12">
+    <section className="py-8 md:py-14">
+      <div className="relative mx-6 max-w-5xl overflow-hidden bg-win-navy p-8 text-win-cream md:p-12 xl:mx-auto">
         <div className="relative z-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div className="max-w-lg">
             <h2 className="text-3xl font-[family-name:var(--font-headline)] mb-4">
@@ -320,6 +322,11 @@ export function CalloutBand(props: CalloutBandBlok) {
           )}
         </div>
       </div>
+      {isRezaCalendly && (
+        <div className="mx-auto mt-6 w-full max-w-5xl bg-white md:mt-8">
+          <CalendlyInlineWidget />
+        </div>
+      )}
     </section>
   )
 }
