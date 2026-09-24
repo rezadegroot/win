@@ -8,7 +8,7 @@ export function Footer() {
         <div className="space-y-4">
           <Link href="/" className="inline-block" aria-label="WIN Instituut — naar home">
             <Image
-              src="/brand/win-logo-2026-trim.png"
+              src="/brand/win-logo-2026.webp"
               alt="WIN Instituut"
               width={257}
               height={219}

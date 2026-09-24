@@ -36,7 +36,7 @@ export function Navigation() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/brand/win-logo-2026-trim.png"
+            src="/brand/win-logo-2026.webp"
             alt="WIN Instituut"
             width={257}
             height={219}

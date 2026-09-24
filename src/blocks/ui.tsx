@@ -8,7 +8,8 @@ export function media(f: FotoRef): Media | null {
 }
 
 export function mediaUrl(f: FotoRef): string {
-  return media(f)?.url ?? ''
+  const foto = media(f)
+  return foto?.sizes?.hero?.url ?? foto?.url ?? ''
 }
 
 export function mediaAlt(f: FotoRef, fallback = ''): string {
