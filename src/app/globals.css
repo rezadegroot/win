@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-win-gold: #B8960C;
+  --color-win-gold-ink: #806700;
+  --color-win-navy: #324355;
+  --color-win-charcoal: #2C2C2C;
+  --color-win-cream: #F5F0E8;
+  --color-win-bronze: #1A1A1A;
+  /* win-olive is de oude, groenige merkkleur — nu een alias op navy zodat
+     eventuele resterende verwijzingen niet breken. Nieuwe code: gebruik win-navy. */
+  --color-win-olive: #324355;
+
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-win-cream);
+  color: var(--color-win-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-headline);
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--color-win-navy);
+  outline-offset: 4px;
+}
+
+:where(.bg-win-navy, .bg-win-charcoal, footer, section.text-white) :where(a, button):focus-visible {
+  outline-color: white;
+}
