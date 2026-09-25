@@ -13,7 +13,7 @@ export function RenderHero({ hero }: { hero?: HeroData }) {
     return (
       <section className="relative overflow-hidden bg-win-cream md:flex md:min-h-[min(82svh,760px)] md:items-center">
         <div className="relative h-[43svh] min-h-[280px] md:absolute md:inset-0 md:h-auto md:min-h-0">
-          <Image src={mediaUrl(hero.foto)} alt={media(hero.foto)?.alt ?? ''} fill sizes="100vw" className="object-cover object-[65%_35%] md:object-center" priority />
+          <Image src={mediaUrl(hero.foto)} alt={media(hero.foto)?.alt ?? ''} fill sizes="100vw" className="object-cover object-[65%_35%] md:object-[center_8%]" priority />
           <div className="absolute inset-0 hidden bg-gradient-to-r from-win-navy/90 via-win-navy/60 to-transparent md:block" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 md:px-8 md:py-20">
